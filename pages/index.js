@@ -31,7 +31,9 @@ const Index = () => {
         // to expand the dimention for the batch size
         let expandDimImg = tf.expandDims(resizedImg)
         if (expandDimImg) {
-          const model = await tf.loadLayersModel('/model/model.json')
+          const model = await tf.loadLayersModel(
+            'https://raw.githubusercontent.com/venkatesh-pro/All-Model/main/binary%20classification%20model/model.json'
+          )
           let predictions = model && model.predict(expandDimImg)
           predictions = predictions.dataSync()
 
